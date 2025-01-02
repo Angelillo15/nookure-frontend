@@ -4,7 +4,7 @@ import emitter from '@/libs/emitter';
 import { useLocation } from 'react-router';
 import { Modrinth } from '@/icons/modrinth';
 
-const hideOnPaths = ['downloads'];
+const hideOnPaths: string[] = [];
 
 export const NookureStaffBaner = () => {
     const pathname = useLocation();
