@@ -9,8 +9,6 @@
     "typecheck": "react-router typegen && tsc"
   },
   "dependencies": {
-    "@heroicons/react": "^2.2.0",
-    "@iconify/react": "^5.1.0",
     "@nextui-org/react": "^2.6.10",
     "@react-router/node": "^7.1.1",
     "@react-router/serve": "^7.1.1",
