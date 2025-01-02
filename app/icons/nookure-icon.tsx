@@ -26,7 +26,7 @@ export const NookureIcon = (props: SVGProps<SVGSVGElement>) => (
                     stroke: 'none'
                 }}
                 transform='matrix(1.3333333,0,0,-1.3333333,421.3996,84.2804)'
-                clip-path='url(#clipPath2)'
+                clipPath='url(#clipPath2)'
             />
         </g>
     </svg>
