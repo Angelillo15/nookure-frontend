@@ -3,13 +3,14 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "cross-env NODE_ENV=production cp app/entry.server.tsx.ignored app/entry.server.tsx && react-router build ; rm -r  app/entry.server.tsx",
+    "build": "cross-env NODE_ENV=production && react-router build",
     "dev": "NODE_ENV=development react-router dev",
     "start": "cross-env NODE_ENV=production react-router-serve ./build/server/index.js",
     "typecheck": "react-router typegen && tsc",
     "cloudflare:dev": "wrangler dev"
   },
   "dependencies": {
+    "@cloudflare/workers-types": "^4.20241230.0",
     "@nextui-org/react": "^2.6.10",
     "@react-router/cloudflare": "^7.1.1",
     "@react-router/node": "^7.1.1",
@@ -19,11 +20,10 @@
     "mitt": "^3.0.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-router": "^7.1.1"
+    "react-router": "^7.1.1",
+    "wrangler": "^3.99.0"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^4.20241112.0",
-    "@hiogawa/vite-node-miniflare": "0.1.1",
     "@react-router/dev": "^7.1.1",
     "@types/node": "^20",
     "@types/react": "^19.0.1",
@@ -35,7 +35,6 @@
     "tailwindcss-view-transitions": "^0.1.1",
     "typescript": "^5.7.2",
     "vite": "^5.4.11",
-    "vite-tsconfig-paths": "^5.1.4",
-    "wrangler": "^3.99.0"
+    "vite-tsconfig-paths": "^5.1.4"
   }
 }
