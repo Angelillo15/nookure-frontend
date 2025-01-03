@@ -6,5 +6,10 @@
 
 html,
 body {
-  font-family: 'Geist', sans-serif;
+    font-family: 'Geist', sans-serif;
+}
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #ffffff transparent;
 }
