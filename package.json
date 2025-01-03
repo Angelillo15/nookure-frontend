@@ -7,7 +7,7 @@
     "dev": "NODE_ENV=development react-router dev",
     "start": "cross-env NODE_ENV=production react-router-serve ./build/server/index.js",
     "typecheck": "react-router typegen && tsc",
-    "cloudflare:dev": "wrangler dev"
+    "cloudflare:dev": "bunx wrangler pages dev ./build/client"
   },
   "dependencies": {
     "@cloudflare/workers-types": "^4.20241230.0",
