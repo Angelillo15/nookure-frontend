@@ -2,9 +2,10 @@ import { isRouteErrorResponse, Links, Meta, Outlet, Scripts, ScrollRestoration, 
 
 import type { Route } from './+types/root';
 import stylesheet from './app.css?url';
-import { Navbar, NextUIProvider } from '@nextui-org/react';
+import { NextUIProvider } from '@nextui-org/react';
 import { NookureStaffBaner } from '@/components/nookure-staff-banner';
 import NookureNavbar from './components/navbar';
+import { Footer } from './components/footer';
 
 export const links: Route.LinksFunction = () => [
     { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
@@ -22,6 +23,7 @@ export const links: Route.LinksFunction = () => [
 
 export function Layout({ children }: { children: React.ReactNode }) {
     const navigate = useNavigate();
+    const navigateView = (view: string) => navigate(view, { viewTransition: true });
     return (
         <html lang='en' className='dark'>
             <head>
@@ -35,13 +37,14 @@ export function Layout({ children }: { children: React.ReactNode }) {
                     <div className='relative h-full w-full bg-black'>
                         <div className='absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]'></div>
                         <div className='absolute left-0 right-0 top-[-10%] h-[1000px] w-[1000px] rounded-full bg-[radial-gradient(circle_400px_at_50%_300px,#fbfbfb36,#000)]'></div>
-                    </div> 
+                    </div>
                 </div>
 
-                <NextUIProvider navigate={navigate} className='font-geist bg-transparent'>
+                <NextUIProvider navigate={navigateView} className='font-geist bg-transparent'>
                     <NookureStaffBaner />
                     <NookureNavbar />
                     {children}
+                    <Footer />
                     <ScrollRestoration />
                     <Scripts />
                 </NextUIProvider>
