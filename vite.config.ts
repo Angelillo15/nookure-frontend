@@ -4,12 +4,13 @@ import tsconfigPaths from 'vite-tsconfig-paths';
 import autoprefixer from 'autoprefixer';
 import tailwindcss from 'tailwindcss';
 import { cloudflareDevProxy } from '@react-router/dev/vite/cloudflare';
+import { ViteImageOptimizer as viteImageOptimizer } from 'vite-plugin-image-optimizer';
 
 export default defineConfig({
-    plugins: [cloudflareDevProxy(), reactRouter(), tsconfigPaths()],
     css: {
         postcss: {
             plugins: [tailwindcss, autoprefixer],
         },
     },
+    plugins: [cloudflareDevProxy(), reactRouter(), tsconfigPaths(), viteImageOptimizer()],
 });
