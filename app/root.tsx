@@ -24,6 +24,7 @@ export const links: Route.LinksFunction = () => [
 export function Layout({ children }: { children: React.ReactNode }) {
     const navigate = useNavigate();
     const navigateView = (view: string) => navigate(view, { viewTransition: true });
+
     return (
         <html lang='en' className='dark'>
             <head>
