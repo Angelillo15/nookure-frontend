@@ -9,7 +9,7 @@ import { PresentationChartLine } from '@/icons/presentation-chart-line';
 import { ServerIcon } from '@/icons/server';
 import { WrenchScreeDriver } from '@/icons/wrench-screewdriver';
 import { Button, Card, CardBody } from '@nextui-org/react';
-import type { ReactNode } from 'react';
+import type { DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react';
 import { useNavigate } from 'react-router';
 import { ContentContainer } from './content-container';
 
@@ -31,7 +31,8 @@ export const cards = [
     {
         title: 'Pterodactyl',
         icon: <ServerIcon />,
-        description: 'We are leading the development of the Open Source themes for Pterodactyl Panel. We have a lot of experience with the Pterodactyl Panel and Wings.',
+        description:
+            'We are leading the development of the Open Source themes for Pterodactyl Panel. We have a lot of experience with the Pterodactyl Panel and Wings.',
     },
     {
         title: 'Optimization',
@@ -56,7 +57,7 @@ export const cards = [
         icon: <ClosedLockIcon />,
         description:
             'We ensure that our software is secure and safe to use. We implement the best practices as encryptation to make sure our software is as secure as possible.',
-    }
+    },
 ] as HeroCardProps[];
 
 export const HeroCard = ({ title, description, icon }: HeroCardProps) => (
@@ -91,14 +92,12 @@ export const Hero = () => {
             <div className='flex flex-col justify-center items-center md:mt-32 mt-12'>
                 <ContentContainer className='flex flex-col vt-name-[introduction]'>
                     <div>
-                        <h1 className='lg:text-6xl md:text-5xl sm:text-4xl text-xl font-medium text-center'>
-                            Welcome to Nookure Studios
-                        </h1>
-                        <h2 className='font-mono sm:text-medium md:text-lg lg:text-xl mt-4 text-center text-stone-500'>
+                        <HeroTitle>Welcome to Nookure Studios</HeroTitle>
+                        <HeroDescription>
                             Nookure is an open-source organization focused on developing software solutions for
                             Minecraft and Pterodactyl, with a strong emphasis on performance optimization, scalability,
                             and efficiency.
-                        </h2>
+                        </HeroDescription>
                     </div>
                     <div className='flex justify-center mt-4 gap-4 flex-wrap'>
                         <Button radius='full' size='md' onPress={() => openLink('/downloads')}>
@@ -123,3 +122,21 @@ export const Hero = () => {
         </>
     );
 };
+
+export const HeroTitle = ({
+    children,
+    ...props
+}: { children: ReactNode } & DetailedHTMLProps<HTMLAttributes<HTMLHeadingElement>, HTMLHeadingElement>) => (
+    <h1 className='lg:text-6xl md:text-5xl sm:text-4xl text-xl font-medium text-center' {...props}>
+        {children}
+    </h1>
+);
+
+export const HeroDescription = ({
+    children,
+    ...props
+}: { children: ReactNode } & DetailedHTMLProps<HTMLAttributes<HTMLHeadingElement>, HTMLHeadingElement>) => (
+    <h2 className='font-mono sm:text-medium md:text-lg lg:text-xl mt-4 text-center text-stone-500' {...props}>
+        {children}
+    </h2>
+);
