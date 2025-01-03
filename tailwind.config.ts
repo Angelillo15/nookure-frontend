@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss';
+import tailwindcssViewTransition from 'tailwindcss-view-transitions';
 
 const { nextui } = require('@nextui-org/react');
 
@@ -53,5 +54,5 @@ export default {
         },
     },
     darkMode: 'class',
-    plugins: [nextui()],
+    plugins: [nextui(), tailwindcssViewTransition],
 } satisfies Config;
