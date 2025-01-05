@@ -1,4 +1,4 @@
-import { isRouteErrorResponse, Links, Meta, Outlet, Scripts, ScrollRestoration, useNavigate } from 'react-router';
+import { isRouteErrorResponse, Links, Meta, Outlet, Scripts, ScrollRestoration, useNavigate, useNavigation } from 'react-router';
 
 import type { Route } from './+types/root';
 import stylesheet from './app.css?url';
@@ -6,6 +6,7 @@ import { NextUIProvider } from '@nextui-org/react';
 import { NookureStaffBaner } from '@/components/nookure-staff-banner';
 import NookureNavbar from './components/navbar';
 import { Footer } from './components/footer';
+import TopBar from './components/topbar';
 
 export const links: Route.LinksFunction = () => [
     { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
@@ -22,6 +23,7 @@ export const links: Route.LinksFunction = () => [
 ];
 
 export function Layout({ children }: { children: React.ReactNode }) {
+    const navigation = useNavigation();
     const navigate = useNavigate();
     const navigateView = (view: string) => navigate(view, { viewTransition: true });
 
@@ -45,6 +47,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 <NextUIProvider navigate={navigateView} className='font-geist bg-transparent'>
                     <NookureStaffBaner />
                     <NookureNavbar />
+                    <TopBar />
                     {children}
                     <Footer />
                     <ScrollRestoration />
