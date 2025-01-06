@@ -19,7 +19,10 @@ export const ResourceCard = ({ title, description, downloadURL, image, downloadB
                 </div>
                 <div className='flex items-center gap-2 p-2'>
                     <div>
-                        <p className='mt-2'>{description}</p>
+                        <div>
+                            <h3 className='text-lg font-bold'>{title}</h3>
+                        </div>
+                        <p>{description}</p>
                         {downloadButton ? (
                             downloadButton
                         ) : (
