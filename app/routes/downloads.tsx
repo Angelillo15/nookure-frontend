@@ -27,7 +27,7 @@ const DownloadPage = ({ loaderData }: Route.ComponentProps) => {
     }, [loaderData]);
 
     return (
-        <div className='flex flex-col justify-center items-center mt-12'>
+        <div className='flex flex-col justify-center items-center lg:mt-12'>
             <DownloadHero />
         </div>
     );
