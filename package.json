@@ -2,6 +2,7 @@
   "name": "nookure-frontend",
   "private": true,
   "type": "module",
+  "platform": "node",
   "scripts": {
     "build": "cross-env NODE_ENV=production && react-router build",
     "build:dev": "cross-env NODE_ENV=development && react-router build",
