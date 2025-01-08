@@ -4,6 +4,7 @@
   "type": "module",
   "scripts": {
     "build": "cross-env NODE_ENV=production && react-router build",
+    "build:dev": "cross-env NODE_ENV=development && react-router build",
     "dev": "NODE_ENV=development react-router dev",
     "start": "cross-env NODE_ENV=production react-router-serve ./build/server/index.js",
     "typecheck": "react-router typegen && tsc",
@@ -38,6 +39,7 @@
     "tailwindcss-view-transitions": "^0.1.1",
     "typescript": "^5.7.2",
     "vite": "^5.4.11",
+    "vite-plugin-commonjs": "^0.10.4",
     "vite-plugin-image-optimizer": "^1.1.8",
     "vite-tsconfig-paths": "^5.1.4"
   }
