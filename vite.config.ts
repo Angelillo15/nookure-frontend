@@ -5,7 +5,6 @@ import autoprefixer from 'autoprefixer';
 import tailwindcss from 'tailwindcss';
 import { cloudflareDevProxy } from '@react-router/dev/vite/cloudflare';
 import { ViteImageOptimizer as viteImageOptimizer } from 'vite-plugin-image-optimizer';
-import commonjs from '@rollup/plugin-commonjs';
 
 export default defineConfig({
     css: {
